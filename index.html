@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <head>
+        <title>Plex File Upload</title>
+    </head>
+
+    <body>
+        <h1>Plex File Upload</h1>
+        <form action="/upload" enctype="multipart/form-data" method="POST">
+            <input type="file" name="fileUploadField" id="fileUploadField" required multiple />
+            <br>
+            <input name="media_type_selector" type="radio" id="movies" value="Movies" required /> <!--change value as needed for your own specific Plex setup-->
+                <label for="movies">Movies</label>
+            <input name="media_type_selector" type="radio" id="shows" value="Shows" /> <!--change value as needed for your own specific Plex setup-->
+                <label for="shows">Shows</label>
+            <br>
+            <input name="media_name" type="text" id="media_name" placeholder="Media name" required />
+            <br>
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>
