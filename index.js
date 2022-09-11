@@ -43,9 +43,9 @@ app.post('/upload', upload.array('fileUploadField'), (req, res) => {
             console.log(req.body.media_type_selector);
         } else {
             let finalDirectory = `${process.env.PLEX_DIRECTORY}/${req.body.media_type_selector}/${req.body.media_name}`;
-
+            fs.mkdir('tmp');
             moveWrapper('tmp', finalDirectory); // move from local tmp directory to the specified path in .env
-
+            fs.rm(dir, { recursive: true });
             res.redirect('/'); // send back to main page
         }
     } catch (err) {
